@@ -586,6 +586,7 @@
     }
 }
 
+/* Values Section */
 .values {
     position: relative;
     background: black;
@@ -673,18 +674,19 @@
 .value-icon {
     position: absolute;
     inset: 0;
-    z-index: 10;
+    z-index: 5;
 }
 
 .value-icon img {
     position: absolute;
     object-fit: cover;
     object-position: center;
-    filter: brightness(0.7);
-    mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+    filter: brightness(0.6);
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
     width: auto;
     height: auto;
+    opacity: 0.8;
 }
 
 .value-icon.light img {
@@ -1114,6 +1116,7 @@
     }
 }
 
+/* Desktop Grid - 5 columns for xl screens */
 .lodges-grid-xl {
     display: none;
     width: 100%;
@@ -1128,6 +1131,7 @@
     }
 }
 
+/* Medium Grid - 2-3 columns for md-lg screens */
 .lodges-grid-md {
     display: none;
     grid-template-columns: repeat(2, 1fr);
@@ -1149,6 +1153,7 @@
     }
 }
 
+/* Mobile Grid - 1 column for small screens */
 .lodges-grid-sm {
     display: grid;
     grid-template-columns: 1fr;
@@ -1315,6 +1320,7 @@
     margin-top: 4px;
 }
 
+/* Footer */
 .footer {
     color: #9ca3af;
     padding: 24px 12px 48px;
@@ -1471,7 +1477,7 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-}
+}/* Reset and Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -1492,7 +1498,7 @@ body {
     overflow-x: hidden;
 }
 
-
+/* Header Styles */
 .header {
     position: fixed;
     top: 0;
@@ -1531,14 +1537,14 @@ body {
 @media (min-width: 1024px) {
     .nav {
         padding: 0 48px;
-        margin-top: 16px;
+        margin-top: 8px;
     }
 }
 
 @media (min-width: 1280px) {
     .nav {
         padding: 0 96px;
-        margin-top: 24px;
+        margin-top: 12px;
     }
 }
 
@@ -1952,7 +1958,7 @@ body {
     max-width: 1920px;
     margin: 0 auto;
     justify-content: center;
-    padding-bottom: 12px;
+    padding-bottom: 4px;
     color: #9ca3af;
     font-size: 14px;
     font-weight: 300;
@@ -1967,11 +1973,12 @@ body {
 
 @media (min-width: 1280px) {
     .header-subtitle {
-        padding-bottom: 16px;
+        padding-bottom: 6px;
         font-size: 16px;
     }
 }
 
+/* Mobile Menu Styles */
 .mobile-menu {
     position: fixed;
     inset: 0;

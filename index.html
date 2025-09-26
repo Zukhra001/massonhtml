@@ -6,7 +6,8 @@
     <title>Великая ложа Казахстана | Официальная масонская организация</title>
     <meta name="description" content="Великая ложа Казахстана — единственная регулярная и общепризнанная масонская организация в Республике Казахстан с 2016 года">
     <meta name="keywords" content="масонская ложа, Казахстан, масоны, Великая ложа, регулярное масонство, Алматы">
-
+    
+    <!-- Preload critical assets -->
     <link rel="preload" href="./logo.png" as="image" type="image/png">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -58,8 +59,11 @@
                     <a href="#lodges" class="nav-link" data-text-key="lodges">Наши ложи</a>
                     <a href="#recognition" class="nav-link" data-text-key="recognition">Мировое признание</a>
                 </div>
-                <div style="display: flex; align-items: center; justify-content: center; margin: 0 8px;">
+                <div class="nav-center">
                     <img src="./logo.png" alt="Логотип Великой Ложи Казахстана" class="logo" loading="eager">
+                    <div class="nav-subtitle">
+                        <span id="navSubtitle">Великая Ложа Казахстана</span>
+                    </div>
                 </div>
                 <div class="nav-right">
                     <a href="#council" class="nav-link" data-text-key="council">Совет ВО</a>
@@ -68,10 +72,6 @@
                 </div>
             </div>
         </nav>
-        
-        <div class="header-subtitle">
-            <span id="headerSubtitle">Великая Ложа Казахстана</span>
-        </div>
     </header>
 
     <!-- Mobile Menu -->
@@ -136,7 +136,9 @@
         <div class="mobile-menu-gradient"></div>
     </div>
 
+    <!-- Main Content -->
     <main class="main-content">
+        <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
             <video class="hero-video" src="./Intro.mp4" autoplay muted playsinline loop="false" onloadeddata="console.log('Video loaded successfully')" onerror="this.src='./bg.jpg'; console.log('Video loading error, using fallback');">
                 Your browser does not support the video tag.
@@ -277,6 +279,7 @@
                 </div>
                 
                 <div class="lodges-grid-container">
+                    <!-- XL Grid (5 columns) -->
                     <div class="lodges-grid-xl">
                         <article class="lodge-card lodge-card-xl">
                             <div class="lodge-image-container lodge-image-container-xl">
