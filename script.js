@@ -554,3 +554,69 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
     });
 }
+function initScrollAnimation() {
+
+    if (window.innerWidth > 767) return;
+
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    const sectionsToAnimate = [
+        '.grand-master',
+        '.masonic-section',
+        '.values',
+        '.lodges'
+    ];
+
+    sectionsToAnimate.forEach(selector => {
+        const section = document.querySelector(selector);
+        if (section) {
+            section.classList.add('scroll-animate');
+            observer.observe(section);
+
+            // Анимируем дочерние элементы
+            if (selector === '.values') {
+                const valueCards = section.querySelectorAll('.value-card');
+                valueCards.forEach(card => {
+                    card.classList.add('scroll-animate');
+                    observer.observe(card);
+                });
+            }
+
+            if (selector === '.lodges') {
+                const lodgeCards = section.querySelectorAll('.lodges-grid-sm .lodge-card');
+                lodgeCards.forEach(card => {
+                    card.classList.add('scroll-animate');
+                    observer.observe(card);
+                });
+
+                const lodgesHeader = section.querySelector('.lodges-header-container');
+                if (lodgesHeader) {
+                    lodgesHeader.classList.add('scroll-animate');
+                    observer.observe(lodgesHeader);
+                }
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollAnimation();
+});
+
+window.addEventListener('resize', () => {
+   
+    if (window.innerWidth <= 767) {
+        initScrollAnimation();
+    }
+});
